@@ -277,7 +277,7 @@ __lxc_unused static inline void LXC_##LEVEL(struct lxc_log_locinfo* locinfo,	\
  */
 #define lxc_log_category_define(name, parent)					\
 	extern struct lxc_log_category lxc_log_category_##parent;	\
-	struct lxc_log_category lxc_log_category_##name = {		\
+	__attribute__((weak)) struct lxc_log_category lxc_log_category_##name = {		\
 		#name,								\
 		LXC_LOG_LEVEL_NOTSET,						\
 		NULL,								\
